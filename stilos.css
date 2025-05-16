@@ -1,0 +1,276 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fondo más suave para toda la página */
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease; /* Suaviza el cambio de fondo */
+}
+
+
+header {
+    background-color: #1D3557; /* Azul oscuro para el encabezado */
+    color: #F1FAEE; /* Blanco suave para el texto */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Título más grande para impacto */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #F1FAEE; /* Blanco suave */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #E63946; /* Rojo suave al pasar el ratón */
+}
+
+
+
+
+
+/* Sección Principal (Sobre mí) */
+section {
+    padding: 40px 30px;
+    margin: 20px 0;
+    background-color: #F1FAEE; /* Blanco suave para las secciones */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+section h2 {
+    color: #1D3557;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+section#about p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Sección Portfolio */
+section#portfolio ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+section#portfolio li {
+    background-color: #c5e5e9; /* Azul suave */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section#portfolio li:hover {
+    transform: scale(1.05); /* Suave aumento de tamaño al pasar el ratón */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra más prominente al pasar el ratón */
+}
+
+section#portfolio h3 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+section#portfolio p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Carrusel de imágenes */
+.carrusel-container {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Mejor ajuste de las imágenes */
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.controls label {
+    position: absolute;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.controls label:nth-child(1) {
+    left: 20px;
+}
+
+.controls label:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls label:nth-child(3) {
+    right: 20px;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-33.33%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-66.66%);
+}
+
+
+
+/* Sección de contacto */
+section#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section#contact label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+section#contact input,
+section#contact textarea {
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+section#contact textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+section#contact input[type="submit"] {
+    background-color: #1D3557;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+section#contact input[type="submit"]:hover {
+    background-color: #E63946; /* Rojo suave en hover */
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section#about p,
+    section#portfolio p,
+    section#contact p {
+        font-size: 1em;
+    }
+
+    section#contact form {
+        padding: 15px;
+    }
+}
+
+/* Estilo para el recuadro de términos y condiciones */
+.terminos-container {
+    background-color: #1D3557;
+    color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    text-align: left; /* Alineación para mayor legibilidad */
+}
+
+.terminos-container a {
+    color: #E63946;
+    text-decoration: none;
+}
+
+.terminos-container a:hover {
+    text-decoration: underline;
+}
